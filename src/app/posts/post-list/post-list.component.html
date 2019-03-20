@@ -1,0 +1,4 @@
+<div *ngFor="let post of posts | async">
+  <h2 [routerLink]="blogDetailLinkVariable" routerLinkActive="router-link-active" >{{post.titulo}}</h2>
+  <p>{{post.conteudo}}</p>
+</div>
