@@ -1,3 +1,11 @@
-<p>
-  post-dashboard works!
-</p>
+
+<mat-form-field>
+    <input matInput placeholder="Titulo do Post" [(ngModel)]="titulo">
+</mat-form-field>
+<br>
+<mat-form-field>
+    <textarea matInput placeholder="Conteúdo  do Post" [(ngModel)]="conteudo">
+    </textarea>
+</mat-form-field>
+<br>
+<button mat-raised-button color="accent" (click)="createPost()" [disabled]="!titulo || !conteudo">Criar Post</button> 

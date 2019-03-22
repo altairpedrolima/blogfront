@@ -1,3 +1,6 @@
-<p>
-  post-detail works!
-</p>
+<div *ngIf="post">
+  <h3>{{post.titulo}}</h3>
+  <p>postado por {{post.autor}} &bull; {{post.publicacao.toDate() | date: 'fullDate'}} </p>
+  <p>{{post.conteudo}}</p>
+  <p>{{post.id}}</p>
+</div>

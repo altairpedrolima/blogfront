@@ -17,7 +17,7 @@ export class PostListComponent implements OnInit {
 
   ngOnInit() {
     this.posts = this.postService.getPosts();
-    console.log(this);
+    console.log(this.posts);
   }
 
 }
