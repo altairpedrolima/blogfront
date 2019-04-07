@@ -1,4 +1,14 @@
-<div *ngFor="let post of posts | async">
-  <h2 routerLink="{{post.id}}" routerLinkActive="router-link-active" >{{post.titulo}}</h2>
-  <p>{{post.conteudo}}</p>
-</div>
+<section>
+    <mat-card *ngFor="let post of posts | async">
+        <mat-card-content routerLink="{{post.id}}">
+            <img src="{{post.imagem}}" alt="{{post.titulo}}">
+            <h2>{{post.titulo}}</h2>
+            <p><small>Postado por {{post.autor}} &bull; em {{post.publicacao}} </small></p>
+        </mat-card-content>
+        <mat-card-actions align="end" *ngIf="auth.currentUserId === post.autor.id">
+            <button mat-icon-button (click)="delete(post.id)">
+                <mat-icon>delete</mat-icon>
+            </button>
+        </mat-card-actions>
+    </mat-card>
+</section>

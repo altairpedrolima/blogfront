@@ -5,10 +5,11 @@ import { MatButtonModule } from '@angular/material';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatToolbarModule } from '@angular/material';
 import { MatInputModule } from '@angular/material/input';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
 
-import { MatCardModule } from '@angular/material';
 import { MatMenuModule } from '@angular/material';
-import { MatIconModule } from '@angular/material';
 import { MatSidenavModule } from '@angular/material';
 import { MatListModule } from '@angular/material';
 
@@ -21,6 +22,7 @@ import { MatListModule } from '@angular/material';
     MatToolbarModule,
     MatExpansionModule,
     MatInputModule,
+    MatProgressBarModule,
 
     MatMenuModule,
     MatCardModule,
@@ -33,6 +35,7 @@ import { MatListModule } from '@angular/material';
     MatToolbarModule,
     MatExpansionModule,
     MatInputModule,
+    MatProgressBarModule,
 
     MatMenuModule,
     MatCardModule,

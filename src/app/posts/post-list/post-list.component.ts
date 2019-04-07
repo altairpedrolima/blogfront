@@ -1,3 +1,4 @@
+import { AuthService } from './../../core/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { PostService } from '../post.service';
 import { Observable } from 'rxjs';
@@ -13,7 +14,7 @@ export class PostListComponent implements OnInit {
 
   public blogDetailLinkVariable = '/blog/:id';
 
-  constructor(private postService: PostService) { }
+  constructor(private postService: PostService, public auth: AuthService) { }
 
   ngOnInit() {
     this.posts = this.postService.getPosts();
