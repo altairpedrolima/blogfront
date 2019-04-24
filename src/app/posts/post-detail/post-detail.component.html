@@ -1,6 +1,7 @@
 <div *ngIf="post">
   <h3>{{post.titulo}}</h3>
   <p>postado por {{post.autor}} &bull; {{post.publicacao.toDate() | date: 'fullDate'}} </p>
+  <markdown [data]="post.conteudo"></markdown>
   <p>{{post.conteudo}}</p>
   <p>{{post.id}}</p>
 </div>

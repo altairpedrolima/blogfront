@@ -5,18 +5,21 @@ import { MaterialModule } from '../material.module';
 
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { AppRoutingModule } from '../app-routing.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     MaterialModule,
     AppRoutingModule
   ],
   exports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     MaterialModule,
     MainNavComponent,
     AppRoutingModule

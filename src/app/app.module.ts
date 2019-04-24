@@ -22,9 +22,7 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { PostsModule } from './posts/posts.module';
-
-
-
+import { MarkdownModule } from 'ngx-markdown';
 
 @NgModule({
   declarations: [
@@ -41,7 +39,6 @@ import { PostsModule } from './posts/posts.module';
     CoreModule,
     SharedModule,
     PostsModule,
-
     AngularFireModule.initializeApp(environment.firebase, 'blog-all'), // imports firebase/app needed for everything
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,

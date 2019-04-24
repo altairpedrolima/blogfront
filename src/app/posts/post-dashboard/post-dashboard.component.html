@@ -1,16 +1,6 @@
 <section>
     <mat-accordion>
 
-
-
-
-        <mat-expansion-panel [hideToggle]="false">
-            <mat-expansion-panel-header>Panel header</mat-expansion-panel-header>
-            Panel body
-            <mat-action-row>
-                <button mat-button (click)="onAction(event)">Action1</button>
-            </mat-action-row>
-        </mat-expansion-panel>
         <mat-expansion-panel [hideToggle]="false">
             <mat-expansion-panel-header>
                 <mat-panel-title>Criar um Post</mat-panel-title>
@@ -26,19 +16,30 @@
                 </div>
             </div>
 
+            <div class="markdown-editor">
 
-            <mat-form-field>
-                <input matInput placeholder="Titulo do Post" [(ngModel)]="titulo">
-            </mat-form-field>
-            <br>
-            <mat-form-field>
-                <textarea matInput placeholder="Conteúdo  do Post" [(ngModel)]="conteudo" rows="10">
-            </textarea>
-            </mat-form-field>
-            <br>
-            <button mat-raised-button color="accent" (click)="createPost()" [disabled]="!titulo || !conteudo">
-                {{buttonText}}
-            </button>
+
+
+                <form class="markdown-editor" [formGroup]="templateForm">
+
+
+
+                    <input matInput formControlName="titulo" placeholder="Titulo do Post">
+
+
+                    <angular-markdown-editor textareaId="editor1" [options]="editorOptions" rows="12"
+                        formControlName="body">
+                    </angular-markdown-editor>
+
+
+
+                    <br>
+                    <button mat-raised-button color="accent" (click)="createPost()" [disabled]="!templateForm.valid">
+                        {{buttonText}}
+                    </button>
+
+                </form>
+            </div>
         </mat-expansion-panel>
     </mat-accordion>
 </section>
