@@ -1,15 +1,51 @@
-<mat-toolbar color="primary">
-  <mat-toolbar-row>
-    <span [routerLink]="blogLinkVariable" routerLinkActive="router-link-active" >Blog All</span>
-    <span class="spacer"></span>
-    <button mat-raised-button color="accent" [routerLink]="blogDashboardLinkVariable" routerLinkActive="router-link-active" >novo post</button>
-    <div *ngIf="auth.afAuth.authState | async as user; else showLogin">
-      <!-- <span>Olá {{user.displayName}}</span> -->
+<div style="height: 80vh">
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
+        <mat-icon>menu</mat-icon>
+      </button>
       
-      <button mat-button (click)=auth.logout()> Logout </button>
-    </div>
-    <ng-template #showLogin>
-      <button mat-button (click)=auth.login()>Login with Google</button>
-    </ng-template>
-  </mat-toolbar-row>
-</mat-toolbar>
+      <span [routerLink]="blogLinkVariable" routerLinkActive="router-link-active">Blog All</span>
+      <span class="menu-spacer"></span>
+      <div fxShow="true" fxHide.lt-md>
+
+          <a [routerLink]="blogDashboardLinkVariable" mat-button>Novo Post</a>
+
+        <!-- 
+        <button mat-raised-button color="accent" [routerLink]="blogDashboardLinkVariable"
+          routerLinkActive="router-link-active">novo post</button>
+
+          -->
+
+        <br>  
+
+        <div *ngIf="auth.afAuth.authState | async as user; else showLogin">
+          <!-- <span>Olá {{user.displayName}}</span> -->
+
+          <button mat-button (click)=auth.logout()> Logout </button>
+        </div>
+        <ng-template #showLogin>
+          <button mat-button (click)=auth.login()>Login with Google</button>
+        </ng-template>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <mat-sidenav-container fxFlexFill>
+    <mat-sidenav #sidenav>
+      <mat-nav-list>
+        <a (click)="sidenav.toggle()" href="" mat-list-item>Close</a>
+        <a href="#" mat-list-item>Menu Item 1</a>
+        <a href="#" mat-list-item>Menu Item 2</a>
+        <a href="#" mat-list-item>Menu Item 3</a>
+        <a href="#" mat-list-item>Menu Item 4</a>
+        <a href="#" mat-list-item>Menu Item 5</a>
+        <a href="#" mat-list-item>Menu Item 6</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content fxFlexFill>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+</div>

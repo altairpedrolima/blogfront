@@ -1,14 +1,30 @@
-<section>
-    <mat-card *ngFor="let post of posts | async">
-        <mat-card-content routerLink="{{post.id}}">
-            <img src="{{post.imagem}}" alt="{{post.titulo}}">
-            <h2>{{post.titulo}}</h2>
+<!--
+fxLayout="row wrap" fxLayoutGap="32px" fxLayoutAlign="flex-start"
+fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center"
+fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="space-around center" fxLayoutGap="10px"
+<mat-icon fxFlex="10%" (click)="delete(post.id)">delete</mat-icon>
+<mat-icon fxFlex="10%" (click)="edit(post.id)">mode-edit</mat-icon>
+<img mat-card-lg-image src="{{post.imagem}}" alt="{{post.titulo}}">
+-->
+
+<section fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="center center" fxLayoutGap="20px">
+    <mat-card fxFlex="0 1 calc(20% - 20px)" *ngFor="let post of posts | async">
+        <mat-card-title fxLayout.gt-xs="row" fxLayout.xs="column">
+            <span fxFlex=80%>{{post.titulo}}</span>
+            <mat-card-actions *ngIf="auth.currentUserId !== post.autor.id">
+                <mat-icon (click)="delete(post.id)">delete</mat-icon>
+                <mat-icon (click)="edit(post.id)">edit</mat-icon>
+            </mat-card-actions>
+        </mat-card-title>
+        <mat-card-content fxLayout.gt-xs="column" fxLayout.xs="column" routerLink="{{post.id}}">
+            <img mat-card-image src="{{post.imagem}}" alt="{{post.titulo}}">
             <p><small>Postado por {{post.autor}} &bull; em {{post.publicacao}} </small></p>
         </mat-card-content>
-        <mat-card-actions align="end" *ngIf="auth.currentUserId === post.autor.id">
-            <button mat-icon-button (click)="delete(post.id)">
-                <mat-icon>delete</mat-icon>
-            </button>
-        </mat-card-actions>
     </mat-card>
 </section>
+<!--
+<button mat-icon-button (click)="delete(post.id)">
+</button>
+<button mat-icon-button (click)="edit(post.id)">
+</button>                
+-->

@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs';
-import { AuthService } from './../../core/auth.service';
-import { PostService } from './../post.service';
+import { AuthService } from '../../core/auth.service';
+import { PostService } from '../post.service';
 import { Component, OnInit } from '@angular/core';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { EditorInstance, EditorOption } from 'angular-markdown-editor';
@@ -9,11 +9,11 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ConditionalExpr } from '@angular/compiler';
 
 @Component({
-  selector: 'app-post-dashboard',
-  templateUrl: './post-dashboard.component.html',
-  styleUrls: ['./post-dashboard.component.scss']
+  selector: 'app-post-new',
+  templateUrl: './post-new.component.html',
+  styleUrls: ['./post-new.component.scss']
 })
-export class PostDashboardComponent implements OnInit {
+export class PostNewComponent implements OnInit {
 
   //atributos markdown editor
   bsEditorInstance: EditorInstance;

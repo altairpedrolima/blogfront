@@ -25,3 +25,21 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+## Material
+Dentro do projeto dar:
+`ng add @angular/material`
+
+O comando acima é similar a:
+
+`npm install --save @angular/material @angular/cdk @angular/animations`
+mais
+`npm install --save hammerjs`
+
+
+
+## Save
+`npm install --save <pacote-qualquer>`
+
+O --save grava a dependencia do pacote instalado em package.json permitindo que o projeto possa ser recriado ao baixar de um repositório com `npm install`

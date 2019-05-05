@@ -1,17 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic&subset=latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic&amp;subset=latin-ext');
+
 @import '~@angular/material/theming';
 // Plus imports for other components in your app.
+
+$general-typography: mat-typography-config(
+  $font-family: '"Open Sans", "Helvetica Neue", sans-serif',
+  $body-2:        mat-typography-level(14px, 24px, 600)  
+);
+
+$secondary-typography: mat-typography-config(
+  $font-family: 'Roboto, sans-serif'
+);
+
+
 
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
 // Be sure that you only ever include this mixin once!
-@include mat-core();
+@include mat-core($general-typography);
 
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$blog-app-primary: mat-palette($mat-blue-gray, 900);
+$blog-app-primary: mat-palette($mat-indigo);
 // $blog-app-accent:  mat-palette($mat-pink, A200, A100, A400);
-$blog-app-accent:  mat-palette($mat-red, A200, A100, A400);
+$blog-app-accent:  mat-palette($mat-amber, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
 $blog-app-warn:    mat-palette($mat-red);
@@ -23,3 +37,21 @@ $blog-app-theme: mat-light-theme($blog-app-primary, $blog-app-accent, $blog-app-
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include angular-material-theme($blog-app-theme);
+
+.grey-alternate-theme {
+    $grey-alternate-primary: mat-palette($mat-blue-grey, 800);
+    $grey-alternate-accent:  mat-palette($mat-yellow, 400);
+
+    $grey-alternate-theme: mat-dark-theme($grey-alternate-primary, $grey-alternate-accent);
+  
+    // better use 'mat-app-background' class (if your app does not use side-nav)
+    // in 'body' element instead of defining color here.
+    // Both side-nav-container and 'mat-app-background' class gets 'color' defined
+    // according to theme color specified.
+    color: rgba(150,150,150,0.8); //No default color defined in themes apparently
+  
+    @include mat-core-theme($grey-alternate-theme);  //angular-material-theme() is an owerkill
+
+    @include mat-toolbar-typography($secondary-typography);
+     
+}

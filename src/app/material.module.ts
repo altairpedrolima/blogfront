@@ -1,47 +1,127 @@
 import { NgModule } from '@angular/core';
 // import { CommonModule } from '@angular/common';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import {
+  MatAutocompleteModule,
+  MatBadgeModule,
+  MatBottomSheetModule,
+  MatButtonModule,
+  MatFormFieldModule,
+  MatButtonToggleModule,
+  MatCardModule,
+  MatCheckboxModule,
+  MatChipsModule,
+  MatDatepickerModule,
+  MatDialogModule,
+  MatDividerModule,
+  MatExpansionModule,
+  MatGridListModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatMenuModule,
+  MatNativeDateModule,
+  MatPaginatorModule,
+  MatProgressBarModule,
+  MatProgressSpinnerModule,
+  MatRadioModule,
+  MatRippleModule,
+  MatSelectModule,
+  MatSidenavModule,
+  MatSliderModule,
+  MatSlideToggleModule,
+  MatSnackBarModule,
+  MatSortModule,
+  MatStepperModule,
+  MatTableModule,
+  MatTabsModule,
+  MatToolbarModule,
+  MatTooltipModule,
+  MatTreeModule,
+} from '@angular/material';
 
-import { MatButtonModule } from '@angular/material';
-import { MatExpansionModule } from '@angular/material/expansion';
-import { MatToolbarModule } from '@angular/material';
-import { MatInputModule } from '@angular/material/input';
-import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { MatCardModule } from '@angular/material/card';
-import { MatIconModule } from '@angular/material/icon';
-
-import { MatMenuModule } from '@angular/material';
-import { MatSidenavModule } from '@angular/material';
-import { MatListModule } from '@angular/material';
 
 
 
 @NgModule({
   declarations: [],
   imports: [
+    MatAutocompleteModule,
+    MatBadgeModule,
+    MatBottomSheetModule,
     MatButtonModule,
-    MatToolbarModule,
-    MatExpansionModule,
-    MatInputModule,
-    MatProgressBarModule,
-
-    MatMenuModule,
+    MatFormFieldModule,
+    MatButtonToggleModule,
     MatCardModule,
+    MatCheckboxModule,
+    MatChipsModule,
+    MatDatepickerModule,
+    MatDialogModule,
+    MatDividerModule,
+    MatExpansionModule,
+    MatGridListModule,
     MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatMenuModule,
+    MatNativeDateModule,
+    MatPaginatorModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
+    MatRadioModule,
+    MatRippleModule,
+    MatSelectModule,
     MatSidenavModule,
-    MatListModule
+    MatSliderModule,
+    MatSlideToggleModule,
+    MatSnackBarModule,
+    MatSortModule,
+    MatStepperModule,
+    MatTableModule,
+    MatTabsModule,
+    MatToolbarModule,
+    MatTooltipModule,
+    MatTreeModule,
+    FlexLayoutModule
   ],
   exports: [
+    MatAutocompleteModule,
+    MatBadgeModule,
+    MatBottomSheetModule,
     MatButtonModule,
-    MatToolbarModule,
-    MatExpansionModule,
-    MatInputModule,
-    MatProgressBarModule,
-
-    MatMenuModule,
+    MatFormFieldModule,
+    MatButtonToggleModule,
     MatCardModule,
+    MatCheckboxModule,
+    MatChipsModule,
+    MatDatepickerModule,
+    MatDialogModule,
+    MatDividerModule,
+    MatExpansionModule,
+    MatGridListModule,
     MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatMenuModule,
+    MatNativeDateModule,
+    MatPaginatorModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
+    MatRadioModule,
+    MatRippleModule,
+    MatSelectModule,
     MatSidenavModule,
-    MatListModule
+    MatSliderModule,
+    MatSlideToggleModule,
+    MatSnackBarModule,
+    MatSortModule,
+    MatStepperModule,
+    MatTableModule,
+    MatTabsModule,
+    MatToolbarModule,
+    MatTooltipModule,
+    MatTreeModule,
+    FlexLayoutModule
   ]
 })
 export class MaterialModule { }

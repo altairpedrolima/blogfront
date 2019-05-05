@@ -8,10 +8,25 @@
   <title>Document</title>
 </head>
 
-<body>
-  
-  <app-main-nav></app-main-nav>
-  <router-outlet></router-outlet>
+<body class="mat-typography">
+
+  <app-layout>
+    <mat-sidenav-container>
+      <mat-sidenav #sidenav role="navigation">
+        <!--this is a place for us to add side-nav code-->
+        <app-sidenav-list (sidenavClose)="sidenav.close()"></app-sidenav-list>
+      </mat-sidenav>
+      <mat-sidenav-content>
+        <!--in here all the content must reside. We will add a navigation header as well-->
+        <app-header (sidenavToggle)="sidenav.toggle()"></app-header>
+        <main>
+          <router-outlet></router-outlet>
+        </main>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+
+  </app-layout>
+
 </body>
 
 </html>

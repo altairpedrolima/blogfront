@@ -1,6 +1,6 @@
 import { PostService } from './post.service';
 import { NgModule } from '@angular/core';
-import { PostDashboardComponent } from './post-dashboard/post-dashboard.component';
+import { PostNewComponent } from './post-new/post-new.component';
 import { PostDetailComponent } from './post-detail/post-detail.component';
 import { PostListComponent } from './post-list/post-list.component';
 import { SharedModule } from '../shared/shared.module';
@@ -9,7 +9,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AngularMarkdownEditorModule } from 'angular-markdown-editor';
 
 @NgModule({
-  declarations: [PostDashboardComponent, PostDetailComponent, PostListComponent],
+  declarations: [PostNewComponent, PostDetailComponent, PostListComponent],
   providers: [PostService],
   imports: [
     SharedModule,

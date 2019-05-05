@@ -12,7 +12,7 @@ import { Post } from '../post';
 export class PostListComponent implements OnInit {
   posts: Observable<Post[]>;
 
-  public blogDetailLinkVariable = '/blog/:id';
+  public blogDetailLinkVariable = '/posts/:id';
 
   constructor(private postService: PostService, public auth: AuthService) { }
 

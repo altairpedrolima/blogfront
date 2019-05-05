@@ -1,4 +1,4 @@
-import { PostDashboardComponent } from './posts/post-dashboard/post-dashboard.component';
+import { PostNewComponent } from './posts/post-new/post-new.component';
 import { PostDetailComponent } from './posts/post-detail/post-detail.component';
 import { PostListComponent } from './posts/post-list/post-list.component';
 import { ContactComponent } from './contact/contact.component';
@@ -7,12 +7,12 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
-  { path: 'blog', component: PostListComponent},
-  { path: 'blog/:id', component: PostDetailComponent},
-  { path: 'dashboard', component: PostDashboardComponent},
+  { path: 'posts', component: PostListComponent},
+  { path: 'posts/:id', component: PostDetailComponent},
+  { path: 'new', component: PostNewComponent},
   { path: 'about', component: AboutComponent},
   { path: 'contact', component: ContactComponent},
-  { path: '', redirectTo: '/blog', pathMatch: 'full' }
+  { path: '', redirectTo: '/posts', pathMatch: 'full' }
 ];
 
 @NgModule({

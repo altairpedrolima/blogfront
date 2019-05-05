@@ -20,16 +20,20 @@ import { SharedModule } from './shared/shared.module';
 
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
-import { HomeComponent } from './home/home.component';
+
 import { PostsModule } from './posts/posts.module';
 import { MarkdownModule } from 'ngx-markdown';
+import { LayoutComponent } from './layout/layout.component';
+import { NavigationModule } from './navigation/navigation.module';
+import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AboutComponent,
     ContactComponent,
-    HomeComponent
+    LayoutComponent
+
   ],
   imports: [
     BrowserModule,
@@ -38,6 +42,7 @@ import { MarkdownModule } from 'ngx-markdown';
     LayoutModule,
     CoreModule,
     SharedModule,
+    NavigationModule,
     PostsModule,
     AngularFireModule.initializeApp(environment.firebase, 'blog-all'), // imports firebase/app needed for everything
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features

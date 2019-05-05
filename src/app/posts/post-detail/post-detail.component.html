@@ -1,3 +1,19 @@
+<h1 class="mat-display-1">Jackdaws love my big sphinx of quartz.</h1>
+<h2 class="mat-h2">The quick brown fox jumps over the lazy dog.</h2>
+
+<h1>This header is unstyled</h1>
+
+<section>
+  <h1>This header will be styled</h1>
+  <div *ngIf="post">
+    <h3>{{post.titulo}}</h3>
+    <p>postado por {{post.autor}} &bull; {{post.publicacao.toDate() | date: 'fullDate'}} </p>
+    <markdown [data]="post.conteudo"></markdown>
+    <p>{{post.conteudo}}</p>
+    <p>{{post.id}}</p>
+  </div>
+</section>
+
 <div *ngIf="post">
   <h3>{{post.titulo}}</h3>
   <p>postado por {{post.autor}} &bull; {{post.publicacao.toDate() | date: 'fullDate'}} </p>
